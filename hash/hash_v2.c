@@ -19,7 +19,6 @@ uint64_t entrypoint(
     uint64_t               data_len
 ) {
   if( account_cnt<1 ) return 0;
-  uint8_t hash[32];
-  blake2b(hash, 32, accounts[0].data, accounts[0].data_len, NULL, 0);
-  return 0UL;
+  blake2b(accounts[1].data, 32, accounts[0].data, accounts[0].data_len, NULL, 0);
+  return 0;
 }

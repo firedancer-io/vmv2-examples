@@ -270,7 +270,7 @@ int blake2b_final( blake2b_state *S, void *out, size_t outlen )
 }
 
 /* inlen, at least, should be uint64_t. Others can be size_t. */
-int blake2b( void *out, size_t outlen, const void *in, size_t inlen, const void *key, size_t keylen )
+__attribute__((noinline)) int blake2b( void *out, size_t outlen, const void *in, size_t inlen, const void *key, size_t keylen )
 {
   blake2b_state S[1];
 
